@@ -8,7 +8,6 @@ public class Day6 {
 	public static void main(String[] args) throws IOException {
 		String inputFile="input6";
 		ArrayList<int[]> letters = new ArrayList<int[]>();
-
 		try (BufferedReader br = new BufferedReader(new FileReader(inputFile)))
 		{
 			String line1  = br.readLine();
