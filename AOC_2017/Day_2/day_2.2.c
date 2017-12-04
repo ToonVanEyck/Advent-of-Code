@@ -61,6 +61,15 @@ int **structure_data(struct input_size i_s, char *buf)
     return data;
 }
 
+void free_data(struct input_size i_s, int ***data)
+{
+    for ( int y = 0 ; y < i_s.y ; y++ ) {
+        free((*data)[y]);
+    }  
+    free(*data);
+    *data = NULL;
+}
+
 void print_data(struct input_size i_s, int **data)
 {
     for ( int y = 0 ; y < i_s.y ; y++ ) {
@@ -104,5 +113,8 @@ int main (int argc, char **argv)
     }
 
     printf("the checksum is %d\n",checksum);
+
+    free_data(i_s,&data);
+
     return 0;
 }
